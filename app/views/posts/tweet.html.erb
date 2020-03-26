@@ -1,0 +1,14 @@
+
+<%= form_tag("/posts/create") do %>
+  <div class="form">
+    <div class="form-body">
+      <!--このエラーメッセージ、英語だから変えてもいいかも。-->
+      <% @post.errors.full_messages.each do |message| %>
+          <%= message %>
+      <% end %>
+
+      <textarea name="tweet"><%= @post.tweet %></textarea>
+      <input type="submit" value="投稿">
+    </div>
+  </div>
+<% end %>

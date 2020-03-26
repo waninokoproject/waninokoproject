@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CandyApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--このurlはtwitterのアイコンとか使えるようになるやつな-->
+    <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header>
+      <div class="HeaderContainer">
+        <div class="Header_Container">
+          <% if @current_user %>
+            <div class="Header_right">
+
+              <%= link_to(CandyApp, "/posts", class: "Header_title") %>
+
+              <div class="Header_icon js-search-btn">
+                <%= link_to(posts_path, class: "btn") do %>
+                  <span class="fas fa-home"></span> TOP
+                <% end %>
+              </div>
+              <div class="Header_icon">
+                <%= link_to(okasis_path, class: "btn") do %>
+                  <span class="fas fa-ice-cream"></span>最新
+                <% end %>
+              </div>
+              <div class="Header_icon">
+                <span class="fas fa-crown"></span>
+              </div>
+            </div>
+            <div class="Header_left">
+              <div class="Header_icon js-post-bnt">
+                <div class="btn post">
+                  <span class="fas fa-pen-square"></span>投稿
+                </div>
+              </div>
+              <!---現状新規ですが、最終的には個人をいじれるようにしたい--->
+              <div class="Header_icon">
+                <%= link_to("/users/#{@current_user.id}", class: "btn") do %>
+                  <img src="<%= "/users_image/#{@current_user.user_image}" %>">
+                <% end %>
+              </div>
+
+              <div class="Header_icon">
+                <%= link_to("/users/logout", method: :post, class: "btn") do %>
+                  <span class="fas fa-sign-out-alt"></span>退出
+                <% end %>
+              </div>
+            </div>
+          <% else %>
+          <div class="Header_right">
+            <%= link_to(CandyApp, "/", class: "Header_title") %>
+          </div>
+          <div class="Header_left">
+            <!---現状新規ですが、最終的には個人をいじれるようにしたい--->
+            <div class="Header_icon">
+              <%= link_to("/users/new", class: "btn") do %>
+                <span class="fas fa-user-circle"></span>新規
+              <% end %>
+            </div>
+
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </header>
+
+    <%= yield %>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      console.log(scope);
+
+      var scope = 'Global Scope'; // グローバル変数を宣言
+
+      $(document).ready(function(){
+      	$('.js-post-bnt').on('click', function(){
+      		$('.tweet').slideToggle();
+      	});
+      });
+      $('.fa-trash-alt').click(function(){
+          if(!confirm('本当に削除しますか？')){
+              /* キャンセルの時の処理 */
+              return false;
+          }else{
+              /*　OKの時の処理 */
+              location.href = 'index.html';
+          }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<%= form_tag("/posts/create") do %>
+  <div class="form tweet">
+    <div class="form-body">
+      <!--このエラーメッセージ、英語だから変えてもいいかも。-->
+      <% @post.errors.full_messages.each do |message| %>
+          <%= message %>
+      <% end %>
+
+      <textarea name="tweet"><%= @post.tweet %></textarea>
+      <input type="submit" value="投稿">
+    </div>
+  </div>
+<% end %>
+
+<div class="main posts-index">
+  <div class="container2">
+    <div class="okasi-show">
+      <div class="okasi-show-main">
+        <header class="okasi-header">
+          <div class="postdate">
+            <span class="screen-reader-text">投稿日</span>
+            <%= @okasi.release_date %>
+          </div>
+          <div class="okasi-title-show">
+            <%= @okasi.name %>
+          </div>
+        </header>
+
+        <div class="okasi-content">
+          <p>
+            <%= @okasi.content %>
+          </p>
+          <div class="photos">
+            <img src="<%= "/Okasi/#{@okasi.okasi_image}" %>">
+          </div>
+        </div>
+        <div class="okasi-table-show">
+          <dl>
+            <dt>発売日</dt>
+            <dd><%= @okasi.release_date %></dd>
+            <dt>メーカー</dt>
+            <dd><%= @okasi.company %></dd>
+            <dt>金額</dt>
+            <dd><%= @okasi.price %></dd>
+            <dt>種類</dt>
+            <dd><%= @okasi.okasi_attribute %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main posts-index">
+  <div class="container2">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <% user = User.find_by(id: post.user_id) %>
+          <img src="<%= "/users_image/#{user.user_image}" %>">
+        </div>
+        <div class="post-user-name">
+          <% user = User.find_by(id: post.user_id) %>
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+        <div class="post-tweet">
+          <% text = post.tweet.split("#") %>
+          <%= simple_format(text[0]) %>
+          <div class="post-tag">
+            <% count = text.count - 1 %>
+            <% for i in 1..count %>
+              <% tag = '#' << "#{text[i]}" %>
+              <%= simple_format(link_to(tag, okasis_path(q:{"name_cont":text[1].chomp}))) %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="post-menus">
+          <% if @current_user.id == post.user_id %>
+            <!--削除機能は自分しかできないようにif文かなにかで仕分けしよう-->
+            <%= link_to("/posts/#{post.id}/destroy", {method: "delete"}) do %>
+              <span class="far fa-trash-alt"></span>
+            <% end %>
+          <% end %>
+          <% if Like.find_by(user_id: @current_user, post_id: post.id) %>
+            <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
+              <span class="fas fa-heart like-btn"></span>
+            <% end %>
+          <% else %>
+            <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
+              <span class="far fa-heart "></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

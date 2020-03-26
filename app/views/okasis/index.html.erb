@@ -1,0 +1,66 @@
+<%= @k %>
+
+<div class="main posts-index">
+  <div class="container">
+    <div class="main-posts">
+      <div class="okasi-index">
+        <ul class="okasi-henai">
+          <% @okasis.each do |okasi| %>
+
+            <a href="/okasis/<%= okasi.id %>">
+
+              <li class="clearfix">
+                <div class="okasi-img">
+                  <img src="<%= "/Okasi/#{okasi.okasi_image}" %>">
+                  <div class="release_day">
+                    発売日 <%= okasi.release_date %>
+                  </div>
+                </div>
+
+                <div class="okasi-text">
+                  <dl>
+                    <dt class="okasi-title">
+                      <%= okasi.name %>
+                    </dt>
+                    <dd class="okasi-text-index">
+                      <%= simple_format(okasi.content) %>
+                    </dd>
+                  </dl>
+                </div>
+
+              </li>
+
+            </a>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div id="pageBodySub">
+      <section>
+        <%= search_form_for @q do |f| %>
+        <div class="form search">
+          <div class=form-body>
+            <%= f.label '商品名' %>
+            <%= f.search_field :name_cont %>
+            <%= f.label 'キーワード' %>
+            <%= f.search_field :content_cont %>
+
+            <%= f.submit "検索" %>
+            </div>
+          </div>
+        <% end %>
+
+        <h2>種類検索</h2>
+          <div class="okasi-type">
+            <% okasi_list = ["チョコレート","スナック菓子","せんべい・駄菓子","キャンデイ","ガム","クッキー"] %>
+            <%= link_to("ーーー", okasis_path(q:{"okasi_attribute_cont":""}), {class: "type-link"}) %>
+            <% okasi_list.each do |okasi| %>
+              <%= link_to(okasi, okasis_path(q:{"okasi_attribute_cont":okasi}), {class: "type-link"},) %>
+
+            <% end  %>
+          </div>
+      </section>
+    </div>
+  </div>
+</div>

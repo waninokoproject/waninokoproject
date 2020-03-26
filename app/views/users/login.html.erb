@@ -1,0 +1,20 @@
+<div class="container2">
+  <div class="form-heading">LOGIN</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <!-- エラーメッセージを表示 -->
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/users/authentication") do %>
+          <input name="mail" value="<%= @mail %>" placeholder="mail">
+          <input name="passwd" type="password" value="<%= @passwd %>" placeholder="password">
+          <input type="submit" value="login">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<%= form_with(model: @okasi, local: true) do |form| %>
+  <div class=form>
+    <div class=form-body>
+      <!--エラーメッセージ-->
+      <%= form.label '商品名' %>
+      <%= form.text_field :name %>
+
+      <%= form.label '金額' %>
+      <%= form.number_field :price %>
+
+      <%= form.label '詳細' %>
+      <%= form.text_area :content %>
+
+      <%= form.label '発売日' %>
+      <%= form.date_field :release_date %>
+
+      <%= form.label '画像' %>
+      <%= form.file_field :okasi_image %>
+
+      <%= form.label '種類' %>
+      <%= form.select :okasi_attribute, {
+        チョコレート: "チョコレート",
+        スナック菓子: "スナック菓子",
+        せんべい・駄菓子: "せんべい・駄菓子",
+        キャンデイ: "キャンデイ",
+        ガム: "ガム",
+        クッキー: "クッキー",
+        チョコレート: "チョコレート",
+        その他: "その他",
+      } %>
+
+      <%= form.label '生産会社' %>
+      <%= form.text_field :company %>
+
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

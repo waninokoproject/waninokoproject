@@ -1,0 +1,193 @@
+/* okasis/index */
+dl{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.okasi-henai{
+  padding: 10px;
+}
+.clearfix a{
+  display: block;
+}
+.okasis-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+.okasis-index-item img {
+  width: 160px;
+  height: 120px;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+.okasi-left img {
+  float: left;
+  width: 160px;
+  height: 120px;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+
+  display: inline;
+}
+.clearfix {
+  display: inline-block;
+}
+.okasi-index{
+  padding: 20px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+.okasi-index li{
+  width: 620px;
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px dotted #ccc;
+}
+.okasi-img {
+  width: 160px;
+  display: inline;
+  float: left;
+}
+.okasi-img img{
+  width: 160px;
+  height: 120px;
+  border: 0;
+}
+.release_day {
+  font-size: 16px;
+  margin: 0 0 3px;
+  padding: 0 0 0 16px;
+}
+.okasi-text {
+  float: right;
+  display: inline;
+  width: 440px;
+  margin: 0 10px 0 10px;
+  text-decoration: none!important;
+}
+.okasi-title {
+  font-size: 14px;
+  padding: 0;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+
+  cursor: pointer;
+}
+.okasi-text-index{
+  display: block;
+  margin: 0 10px;
+}
+.okasi-index li .text {
+    float: left;
+    display: inline;
+    width: 490px;
+    margin: 0 0 0 10px;
+}
+/* okasis/show */
+.okasi-show{
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+.okasi-show-main{
+  flex: 40%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.okasi-header{
+  margin-bottom: 1.8em;
+}
+.postdate{
+  border: 0;
+  border-style: solid;
+  border-left-width: 4px;
+  border-color: #9f63f0;
+  padding: 0.9em 0 0 0.9em;
+  margin-bottom: 0.9em;
+  line-height: 1;
+}
+.screen-reader-text{
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.okasi-title-show{
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0;
+  line-height: 1.2;
+  padding: 0;
+}
+.okasi-content{
+}
+.okasi-content p{
+  margin: 0 0 1.8em;
+}
+.photos {
+    clear: both;
+}
+.photos img{
+  height: 333px;
+  width: 500px;
+  display: block;
+  margin: 1.8rem auto;
+}
+.okasi-table-show{
+  padding-bottom: 0.9em;
+  border-top: dotted 1px rgba(51, 51, 51, 0.2);
+  padding: 0.9em 1.8em 0;
+  margin: 0 -1.8em;
+}
+.okasi-table-show dl{
+  margin-bottom: 0;
+  line-height: 1.8;
+}
+.okasi-table-show dt{
+  width: -1em;
+  float: left;
+}
+.okasi-table-show dd{
+  margin: 0 0 0 8em;
+  overflow: hidden;
+}
+
+/*-----お菓子も試作------*/
+.okasi-type{
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+.okasi-type a{
+  display: block;
+}
+
+.okasi-type a{
+  padding: 8px 10px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(159, 99, 240) 50%);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: .3s;
+  display: block;
+}
+
+.okasi-type a:hover{
+  background-position: -100% 0;
+  color: #fff;
+}
+
+.border{
+  display: none;
+  background-image: rgb(159, 99, 240);
+}

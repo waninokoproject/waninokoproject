@@ -1,0 +1,2 @@
+class Okasi < ApplicationRecord
+end

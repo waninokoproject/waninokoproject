@@ -1,0 +1,259 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*----共通レイアウト。場所はここでいいのか？ええ？----*/
+
+body {
+  color: #333333;
+  font-family: 'Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+  background-color: #f3f3f3
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.333;
+}
+
+a {
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 16px;
+}
+
+input {
+  background-color: transparent;
+  outline-width: 0;
+  color:#2d3133;
+}
+
+form input[type="submit"] {
+  border: none;
+  cursor: pointer;
+  color:#2d3133;
+}
+
+button, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;
+}
+
+.container {
+  //max-width: 700px;
+  //margin: 20px auto;
+  //padding-left: 15px;
+  //padding-right: 15px;
+  clear: both;
+}
+
+/*---ここからヘッダー---*/
+.HeaderContainer{
+  height: 57px;
+  margin: 0 auto;
+  background-color: #9f63f0
+}
+
+.Header_Container{
+  padding-right: 16px;
+  padding-left: 16px;
+  max-width: 920px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Header_right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.Header_title{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size:32px;
+  color:#f2f2f2;
+}
+
+.Header_icon{
+  margin-left:20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 100%;
+  color: #fff;
+}
+
+.btn:hover{
+  transform: scale(1.1);
+  color:#FFF;
+}
+
+.btn{
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.post{
+  display: flex;
+  background-color: #f4f4f4;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px 0 12px;
+  height: 32px;
+  background-color: #9400ff;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+
+
+.Header_left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Header_icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40%;
+  object-fit: cover;
+}
+/*----共通レイアウト終わり----*/
+
+/*----form start----*/
+.form {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  display: block;
+}
+.search {
+  position:relative;
+  max-width:300px;
+  margin-bottom:20px;
+}
+.tweet{
+  display: block;
+}
+.tweet{
+  display: none;
+}
+.okasi_search{
+  display: block;
+}
+
+.post_search{
+  display: block;
+}
+
+.form-heading {
+  font-weight: 300;
+  margin: 60px 0 20px;
+  font-size: 48px;
+  color: #bcc8d4;
+}
+
+.form-body {
+  padding: 30px;
+}
+
+.form-error {
+  color: #ff4d75;
+}
+
+.form input {
+  width: 100%;
+  border: 1px solid #d8dadf;
+  padding: 10px;
+  color: #2d3133;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
+.search input{
+  width: 100%;
+  border: 1px solid #d8dadf;
+  padding: 10px;
+  color: #2d3133;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 23px;
+}
+
+.form select{
+  width: 103.5%;
+  border: 1px solid #d8dadf;
+  padding: 10px;
+  color: #2d3133;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 2px;
+
+}
+
+.form textarea {
+  width: 100%;
+  min-height: 160px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.form input[type="submit"] {
+  background-color: #9400ff;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  width: 120px;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  float: right;
+}
+
+.form-body:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/*----form owaowari----*/
+
+.sbox{
+  height:50px;
+  padding:0 10px;
+  position:absolute;
+  left:0;
+  top:0;
+  border-radius:2px;
+  outline:0;
+  background:white;
+}
+#sbtn2{
+  height:50px;
+  position:absolute;
+  left:240px;/*アイコン左右の位置調整*/
+  top:0;
+  background:none;
+  color:#666;
+  border:none;
+  font-size:20px;/*アイコンサイズ*/
+}
+
+
+/*--------------------------------------------*/
